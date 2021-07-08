@@ -187,7 +187,8 @@ entry *load_entries(FILE *fp) {
   return ret;
 }
 
-void write_all_entries(entry * p) {
+void write_all_entries(entry * p) 
+{
   FILE *fp = fopen(DB, "w");
   while (p != NULL) {
     fprintf(fp, "%s,%s\n", p->name, p->phone);
