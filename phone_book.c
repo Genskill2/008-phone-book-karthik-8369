@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     exit(1);
   } 
 
-  if (strcmp(argv[1], "add") == 0) {   /* Handle add */
+  if (strcmp(argv[1], "add") == 0) {    /* Handle add */
     if (argc != 4) {
       print_usage("Improper arguments for add", argv[0]);
       exit(1);
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
     char *phone = argv[3];
     add(name, phone);
     exit(0);
-  } else if (strcmp(argv[1], "list") == 0) {  /* Handle list */
+  } else if (strcmp(argv[1], "list") == 0) {   /* Handle list */
     if (argc != 2) {
       print_usage("Improper arguments for list", argv[0]);
       exit(1);
@@ -62,9 +62,9 @@ int main(int argc, char *argv[]) {
     list(fp);
     fclose(fp);
     exit(0);
-  } else if (strcmp(argv[1], "search") == 0) {  /* Handle search 
+  } else if (strcmp(argv[1], "search") == 0) {  /* Handle search */
   
-       printf("NOT IMPLEMENTED!\n"); /* TBD  */
+        printf("NOT IMPLEMENTED!\n");    /* TBD  */
     if(argc!=3){
       print_usage("Improper arguments for delete", argv[0]);
       exit(1);
@@ -112,13 +112,13 @@ FILE *open_db_file() {
   
 void free_entries(entry *p) {
   /* TBD */
-  /*entry *temp=p;
+  entry *temp=p;
   entry *tmp_nxt;
   while(temp!=NULL){
     tmp_nxt=temp->next;
     free(temp);
     temp=tmp_nxt;
-  }*/
+  }
   while(p!=NULL){
   free(p);
   p =p->next;
@@ -238,7 +238,7 @@ void list(FILE *db_file) {
   
 
 
-/*int search(FILE *db_f,char *name){
+int search(FILE *db_f,char *name){
   entry *p=load_entries(db_f);
   entry *base=p;
   while(p!=NULL){
@@ -252,7 +252,7 @@ void list(FILE *db_file) {
   }
   free_entries(base);
   return 0;
-}*/
+}
 
 
 int delete(FILE *db_file, char *name) 
